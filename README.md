@@ -1,1 +1,1 @@
-https://git.heroku.com/fast-plains-43339.git
+https://fast-plains-43339.herokuapp.com/
