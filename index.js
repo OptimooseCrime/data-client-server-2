@@ -1,6 +1,6 @@
 const express = require('express')
 const server = express()
-const port = 8080
+const port = process.env.PORT || 8080
 const cors = require('cors')
 const data = require('./data/instructors.json')
 const res = 'response'
@@ -26,7 +26,11 @@ server.get('/:id', idRoute)
 function idRoute(req, res){
   var id = findId(data, req.params.id)
   if (!id){
-    next((404).json)
+    res.status(404).json({
+      error:{
+        message:"No record found"
+      }
+    })
   }
   else{
     res.json({data: id})
