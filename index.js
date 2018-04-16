@@ -3,8 +3,6 @@ const server = express()
 const port = process.env.PORT || 8080
 const cors = require('cors')
 const data = require('./data/instructors.json')
-const res = 'response'
-const req = 'require'
 
 function findId(data, id){
   for (var i = 0; i < data.length; i++) {
